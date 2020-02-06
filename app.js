@@ -39,6 +39,4 @@ app.get("/project",function(req,res){
 });
 
 
-app.listen(7200,function(){
-	console.log("Server is listening!!");
-});
+app.listen(process.env.PORT || 7200)

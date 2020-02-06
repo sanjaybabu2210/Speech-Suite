@@ -43,7 +43,7 @@
 <textarea  style="text-align:center;" id="val" rows="20" cols="50"></textarea>
 	
 <br><button id="start" class="btn btn-primary">I'm Speaking</button>
-	//<button onclick="wiki()">Wikipedia</button>
+	<!--<button onclick="wiki()">Wikipedia</button>-->
 
 
 	<% for(var i =1; i<100 ;i++){ %>
@@ -81,7 +81,7 @@ let height = 100;
 	let slide = new Array();
 for(let j=0; j<=total_slides; j++){
 				slide[j] = pptx.addSlide();
-
+				slide_image[j] = ' ';
 				
 			}
 	
@@ -143,8 +143,8 @@ for(let j=0; j<=total_slides; j++){
 		if(x[i] == "add" && x[i+1]== "image"){                   //add image
 			var url = load(x.slice(i+2).join(" "), k);
 			  var result = "add image";
-			slide[current_slide].addImage({ path:url, x:1, y:1, w:6, h:4 })
-
+			//slide[current_slide-1].addImage({ path:url, x:1, y:1, w:6, h:4 });
+			slide_image[current_slide-1] = url;
 			  console.log("result: " + result);
 			
 		}
@@ -170,12 +170,12 @@ for(let j=0; j<=total_slides; j++){
 			load(x.slice(i+2).join(" "), k);
 			  var result = "add image";
 			  console.log("result: " + result);
-			
+			document.querySelector('#slider'+current_slide+' #image').css('display', 'block');
 		}
 	}
 	for(var i=0;i < x.length ;i++){
 		if(x[i] == "delete" && x[i+1]== "image"){                   //delete image
-			document.querySelector('#slider'+current_slide+' #image').src="";
+			document.querySelector('#slider'+current_slide+' #image').css('display', 'none');
 			  var result = "delete image";
 			  console.log("result: " + result);
 			
@@ -206,6 +206,8 @@ for(let j=0; j<=total_slides; j++){
 
 				let textboxText = document.getElementById('heads').innerHTML;
 				let textboxOpts = { x: 1, y: 1, align: "center", color: "363636", fill: "f1f1f1" };
+				if(slide_image[j]!=' '){
+				slide[j].addImage({path:slide_image[j]});}
 				slide[j].addText(textboxText, textboxOpts);
 			}
 			pptx.writeFile("Sample Presentation");
