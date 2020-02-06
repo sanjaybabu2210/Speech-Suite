@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S</title>
+    <style> body {padding: 0; margin: 0;} </style>
+	  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	  <script src="https://cdn.jsdelivr.net/gh/gitbrent/pptxgenjs@3.1.0/dist/pptxgen.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="script.js"></script>
+    <style>
+		.notepad{
+			border: 3px solid green;
+			background-color:#FDECEE ;
+			width:600px;
+			margin:10%;
+			height:400px;
+		}
+	 	.image {
+    width: 100%; /* or any custom size */
+ 
+    object-fit: contain;
+	size:cover;
+			margin-bottom:10%;
+}
+	  
+	  
+	  </style>
+ </head>
+  <body>
+	  
+   
+  
+
+
+
+<!-- <div class="words">
+
+</div> -->
+<h3 align="center">Speech Suite</h3><br><br>
+<div align="center">
+<textarea  style="text-align:center;" id="val" rows="20" cols="50"></textarea>
+	
+<br><button id="start" class="btn btn-primary">I'm Speaking</button>
+	//<button onclick="wiki()">Wikipedia</button>
+
+
+	<% for(var i =1; i<100 ;i++){ %>
+	
+	<div id="slider<%= i %>" class="container">
+		<h1 id="heads"></h1>
+		<h3>
+			
+		</h3>
+		<img id="image" class="image"/>
+		
+	</div>
+	
+<%    };  %>
+</div>
+	
+<script>
+
+	
+	
+  var SpeechRecognition = window.webkitSpeechRecognition;
+  var recognition = new SpeechRecognition();
+  recognition.interinResults = true;
+  /*let p = document.createElement('p'); 
+  const words = document.querySelector('.words');
+  words.appendChild(p); */
+  let val = '';
+	let pptx = new PptxGenJS();
+  let total_slides = 0;
+  let current_slide = 1;
+	let k=0;
+	let padding = 0;
+let height = 100;
+	let slide_image = new Array();
+	let slide = new Array();
+for(let j=0; j<=total_slides; j++){
+				slide[j] = pptx.addSlide();
+
+				
+			}
+	
+	
+  recognition.addEventListener('result', e => 
+  {
+  
+  const trns = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join(' ');
+  console.log(trns);
+  //p.textContent = trns;
+  val = val + '\r\n' + trns + ' ';
+	  
+	  //Need to change sentences to command
+	  var command;
+	  command = trns;
+	  
+	var x = command.split(" ");
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "make" && x[i+1]== "PPT"){                      //make ppt
+			  total_slides++;
+			  var result = "make powerpoint";
+			  console.log("result: " + result);
+			console.log('#slider'+current_slide);
+			  $('#slider'+current_slide).addClass("notepad");
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "next" && x[i+1]== "slide"){                     //next slide
+			 	 total_slides++;
+				current_slide++;
+			  var result = "new slide";
+			  console.log("result: " + result);
+			  $('#slider'+current_slide).addClass("notepad");
+		}
+	}
+	  for (var i=0;i<x.length;i++){
+		  if (x[i] == "add" && x[i+1]=="border")
+			  {
+				  $('#slider'+current_slide).addClass("border"); 
+			  }
+	  }
+	  for(var i=0;i < x.length ;i++){
+		if(x[i] == "next" && x[i+1]== "slide"){                     //next slide
+			 	 total_slides++;
+				current_slide++;
+			  var result = "new slide";
+			  console.log("result: " + result);
+			  $('#slider'+current_slide).addClass("notepad");
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "previous" && x[i+1]== "slide"){                   //previous slide
+			  current_slide--;
+			  var result = "previous slide";
+			  console.log("result: " + result);
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "add" && x[i+1]== "image"){                   //add image
+			var url = load(x.slice(i+2).join(" "), k);
+			  var result = "add image";
+			slide[current_slide].addImage({ path:url, x:1, y:1, w:6, h:4 })
+
+			  console.log("result: " + result);
+			
+		}
+		if((x[i] == "decrease" && x[i+1]== "height") || (x[i] == "decrease" && x[i+1]== "size") ){                 //decrease height
+			height = height - 10;
+			$('#slider'+current_slide+' #image').css("height",height+'%')
+		}
+		if(x[i] == "increase" && x[i+1]== "height"){                 //increase height
+		
+			height = height + 10;
+			$('#slider'+current_slide+' #image').css("height",height+'%')
+		}
+		if(x[i] == "move" && x[i+1]== "down"){                 //move down
+		
+			padding = padding + 20;
+			$('#slider'+current_slide+' #image').css("padding-top",padding+'px')
+		}
+	
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "change" && x[i+1]== "image"){                   //change image
+			k++;
+			load(x.slice(i+2).join(" "), k);
+			  var result = "add image";
+			  console.log("result: " + result);
+			
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "delete" && x[i+1]== "image"){                   //delete image
+			document.querySelector('#slider'+current_slide+' #image').src="";
+			  var result = "delete image";
+			  console.log("result: " + result);
+			
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "add" && x[i+1]== "heading"){                     //add heading
+			console.log(x[i+2]);
+	
+            document.querySelector('#slider'+current_slide+' #heads').innerHTML = x.slice(i+2).join(" ");
+			//console.log(document.querySelector('#slider['+current_slide+'] #heads').innerHTML);
+		}
+	}
+	for(var i=0;i < x.length ;i++){
+		if(x[i] == "delete" && x[i+1]== "heading"){                 //delete heading
+			console.log(x[i+2]);
+            $('#slider'+current_slide+' #heads').innerHTML = null;
+		}
+	}
+	  
+	  	for(var i=0;i < x.length ;i++){
+			 if(x[i] == "save" && x[i+1]== "PPT"){                 //save ppt
+				  
+				
+			let slide = new Array();
+			for(let j=0; j<total_slides; j++){
+				slide[j] = pptx.addSlide();
+
+				let textboxText = document.getElementById('heads').innerHTML;
+				let textboxOpts = { x: 1, y: 1, align: "center", color: "363636", fill: "f1f1f1" };
+				slide[j].addText(textboxText, textboxOpts);
+			}
+			pptx.writeFile("Sample Presentation");
+
+		}
+	}
+	console.log(x);
+  if(e.results[0].isFinal){
+    /*p = document.createElement('p');
+    words.append(p);*/
+    document.getElementById('val').value = val;
+  }; 
+});
+  recognition.addEventListener('end',recognition.start);
+  $('#start').on('click', function(){recognition.start()});
+  //recognition.start();
+
+function load(a, n){
+                var API_KEY = '15151126-aa0947b85bd5378813fb2324f';
+                var URL = "https://pixabay.com/api/?key="+API_KEY+"&q="+encodeURIComponent(a)+"&image_type=photo&pretty=true";
+                $.getJSON(URL, function(data){
+                    if (parseInt(data.totalHits) > 0){
+						let url;
+						url = data.hits[0].largeImageURL;
+                        //$.each(data.hits, function(i, hit){ console.log(hit.largeImageURL); });
+                        console.log(url);
+						//document.getElementById( 'image'+current_slide ).src=data.hits[0].largeImageURL;
+						document.querySelector('#slider'+current_slide+' #image').src=url;
+						return url;
+                    }
+                    else
+                        console.log('No hits');
+				
+                });
+	
+}
+function wikipedia(){
+	//var url = "https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=box";
+	var a = 'dog';
+	var url = "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch="+encodeURIComponent(a)+"&format=json";
+	$.getJSON(url, function(data){
+		console.log(data);
+	});
+}
+	function wiki(){
+		var searchTerm = 'dog';
+		var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+searchTerm+"&format=json&callback=?";
+		$.ajax({
+			url:url,
+			type:'GET',
+			datatype:'json',
+			data:function(data, status, jqXHR){console.log(data);},
+			success:function(){console.log('success');}
+		});
+	}
+	
+</script>
+
+  </body>
+</html>
