@@ -17,7 +17,7 @@
 		.notepad{
 			border: 3px solid black;
 			background-color:#e6ffff ;
-			width:900px;
+			width:800px;
 			margin:10%;
 			height:500px;
 		}
@@ -35,191 +35,6 @@
 		.None{
 			display:none;
 		}
-		.shape_rectangle{
-			width: 200px;
-      		height: 100px;
-      		background: red;
-		}
-		.shape_square{
-			width: 100px;
-      		height: 100px;
-      		background: red;
-		}
-		.shape_circle{
-			width: 100px;
-      		height: 100px;
-      		background: red;
-      		border-radius: 50%
-		}
-		.shape_oval{
-			width: 200px;
-      		height: 100px;
-   		   	background: red;
-     		border-radius: 100px / 50px;
-		}
-		.shape_triangle{
-			width: 0;
-      		height: 0;
-      		border-left: 50px solid transparent;
-     		border-right: 50px solid transparent;
-     		border-bottom: 100px solid red;
-		}
-		.shape_downtriangle{
-		  width: 0;
-		  height: 0;
-		  border-left: 50px solid transparent;
-		  border-right: 50px solid transparent;
-		  border-top: 100px solid red;
-		}
-		   .shape_lefttriangle {
-      width: 0;
-      height: 0;
-      border-top: 50px solid transparent;
-      border-right: 100px solid red;
-      border-bottom: 50px solid transparent;
-    }
-		 .shape_righttriangle {
-      width: 0;
-      height: 0;
-      border-top: 50px solid transparent;
-      border-left: 100px solid red;
-      border-bottom: 50px solid transparent;
-    }
-		  .shape_toplefttriangle {
-      width: 0;
-      height: 0;
-      border-top: 100px solid red;
-      border-right: 100px solid transparent;
-    }
-		.shape_toprighttriangle {
-      width: 0;
-      height: 0;
-      border-top: 100px solid red;
-      border-left: 100px solid transparent;
-    }
-  
-		 .shape_bottomlefttriangle {
-      width: 0;
-      height: 0;
-      border-bottom: 100px solid red;
-      border-right: 100px solid transparent;
-    }
-  .shape_bottomrighttriangle {
-      width: 0;
-      height: 0;
-      border-bottom: 100px solid red;
-      border-left: 100px solid transparent;
-    }
-	.shape_curvedarrow {
-      position: relative;
-      width: 0;
-      height: 0;
-      border-top: 9px solid transparent;
-      border-right: 9px solid red;
-      transform: rotate(10deg);
-    }
-		
-	.shape_trapezoid {
-      border-bottom: 100px solid red;
-      border-left: 25px solid transparent;
-      border-right: 25px solid transparent;
-      height: 0;
-      width: 100px;
-    }
-    .shape_parallelogram {
-      width: 150px;
-      height: 100px;
-      transform: skew(20deg);
-      background: red;
-    }
-    .shape_starsix {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 100px solid red;
-      position: relative;
-    }
-    
-	.shape_starfive {
-      margin: 50px 0;
-      position: relative;
-      display: block;
-      color: red;
-      width: 0px;
-      height: 0px;
-      border-right: 100px solid transparent;
-      border-bottom: 70px solid red;
-      border-left: 100px solid transparent;
-      transform: rotate(35deg);
-    }
-    
-	.shape_pentagon {
-      position: relative;
-      width: 54px;
-      box-sizing: content-box;
-      border-width: 50px 18px 0;
-      border-style: solid;
-      border-color: red transparent;
-    }
-    
-	.shape_hexagon {
-      width: 100px;
-      height: 55px;
-      background: red;
-      position: relative;
-    }
-    
-	.shape_octagon {
-      width: 100px;
-      height: 100px;
-      background: red;
-      position: relative;
-    }
-    
-	.shape_heart {
-      position: relative;
-      width: 100px;
-      height: 90px;
-    }
-		
-    .shape_diamond {
-      width: 0;
-      height: 0;
-      border: 50px solid transparent;
-      border-bottom-color: red;
-      position: relative;
-      top: -50px;
-    }
-		
-	.shape_moon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      box-shadow: 15px 15px 0 0 red;
-    }
-	.shape_cone {
-      width: 0;
-      height: 0;
-      border-left: 70px solid transparent;
-      border-right: 70px solid transparent;
-      border-top: 100px solid red;
-      border-radius: 50%;
-    }
-	.bold 
-	{
-		font-style: bold;
-	}
-	.italic
-	{
-		font-style: italic;
-	}
-	.underline
-	{
-		font-style: underline;
-	}	
-		
-		
 		.newbord{
 			
 		}
@@ -253,13 +68,12 @@
 <h2 align="center" style="margin-top:60px;">SPEECH SUITE</h2><br><br>
 <div align="center">
 <textarea  style="text-align:center;border-radius:20%;" id="val" rows="20" cols="50"></textarea>
-
 	
 <br><button id="start" class="btn btn-primary" style="margin-bottom:20px;">I'm Speaking</button>
-	<button onclick="synonymAPI('next');">Synonym</button>
+	<!-- <button onclick="p5wiki()">Wikipedia</button> -->
 	
 	<p style="margin-bottom:10px">
-		<input id="userInput" style="width:400px;"  /><button  id="newbi" onclick="doit();">
+		<input id="userInput" style="width:400px;"  /><button  onclick="doit();">
 		Speech
 		</button>
 	</p>
@@ -279,19 +93,8 @@
 		</h3>
 		<img id="image" class="image"/>
 		<p id="about">
-			<div id="content">
 			
-			</div>
 		</p>
-		<div id="shapes">
-			
-		</div>
-		<div id="format">
-			
-		</div>
-		<div id="foote" style="margin-top:40%;">
-			
-		</div>
 		
 	</div>
 	
@@ -320,15 +123,6 @@
 let height = 100;
 	let slide_image = new Array();
 	let slide = new Array();
-	let flag=0;
-	let num =1;
-	let lines = [];
-	let cont;
-	let newlist = [];
-
-
-
-
 for(let j=0; j<25; j++){
 				slide_image[j] = ' ';
 				
@@ -337,23 +131,13 @@ var command;
 	function doit()
 	{
 	//**********************************************************************************************************************************************
-	flag=0;
-		command = document.querySelector('#userInput').value;
+	command = document.querySelector('#userInput').value;
 		x = command.split(" ");
 	
-		
-		if(cont == 1){
-			x.push('\n');
-				lines.push(x);
-				console.log(lines);
-				// document.querySelector('#slider'+current_slide+' #content').textContent = lines[i+1].join(" ");
-				
-		 };	
 	for(var i=0;i < x.length ;i++){
 	//keys("decrease");
 	
 		
-
 		
 		
 		var y = x.slice(0,x.length);
@@ -369,27 +153,21 @@ var command;
 				total_slides++;
 
 			}
-
-			document.querySelector('#slider'+current_slide+' #foote').innerHTML = current_slide;
 			  var result = "make powerpoint";
 			  console.log("result: " + result);
 			console.log('#slider'+current_slide);
 			  $('#slider'+current_slide).addClass("notepad");
-			break;
 		}
 	}
 	for(var i=0;i < x.length ;i++){
 		if((x[i] == "next" || words['next']!=-1 )&& (y.includes("slide"))){                     //next slide
 			total_slides++;
-			
-				current_slide++;
-			document.querySelector('#slider'+current_slide+' #foote').innerHTML = current_slide;
 			$('#slider'+current_slide).css("box-shadow","0px 0px white");
+				current_slide++;
 			  var result = "new slide";
 			  console.log("result: " + result);
 			  $('#slider'+current_slide).addClass("notepad");
-			flag=1;
-			 break;
+			 
 			 
 		}
 	}
@@ -405,219 +183,27 @@ var command;
 			 
 	// 	}
 	// }
-	newlist = [];
-	for(var i=0;i<lines.length;i++){
-	
-
-		newlist = newlist.concat(lines[i]);
-		
-
-		// document.querySelector('#slider'+current_slide+' #content').textContent = lines[i].join(" ");
-	}
-
-
-
-	// Get the input field-------------------------------------------------------------------------------------------
-var input = document.getElementById("userInput");
-
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.doit();
-    // Trigger the button element with a click
-    document.getElementById("newbi").click();
-  }
-});
-
-
-
-
-	for(var i=0;i<10;i++){
-       document.querySelector('#slider'+current_slide+' #content').textContent = newlist.join(" ");
-}
-		for(var i =0;i<100;i++){													//To identify which slide user is on
+		for(var i =0;i<100;i++){
 			if(i == current_slide){
 				$('#slider'+i).css("box-shadow","8px 12px #ff6666");
 			}else{
 				$('#slider'+i).css("box-shadow","0px 0px white");
 			}
 		}
-
-	// newly added-----------------------------------------------------------------------------------------------------
 	  for (var i=0;i<x.length;i++){
 		  if (x[i] == "add" && x[i+1]=="border")
 			  {
 				  $('#slider'+current_slide).addClass("border"); 
 			  }
-			  if (x[i] == "align" && x[i+1]=="left")
-			  {
-				  $('#slider'+current_slide+' #content').css("text-align","left")
-			  }
-			  if (x[i] == "align" && x[i+1]=="right")
-			  {
-				  $('#slider'+current_slide+' #content').css("text-align","right")
-			  }
-			  if (x[i] == "align" && x[i+1]=="center")
-			  {
-				  $('#slider'+current_slide+' #content').css("text-align","center")
-			  }
-			  if (x[i] == "align" && x[i+1]=="justify")
-			  {
-				  $('#slider'+current_slide+' #content').css("text-align","justify")
-			  }
-			  if (x[i] == "align" && x[i+1]=="heading" && x.slice(i+1).includes('left'))
-			  {
-				  $('#slider'+current_slide+' #heading').css("text-align","left")
-			  }
-			  if (x[i] == "align" && x[i+1]=='heading' && x.slice(i+1).includes('right'))
-			  {
-				  $('#slider'+current_slide+' #heading').css("text-align","right")
-			  }
-			  if (x[i] == "align" && x[i+1]=="heading" && x.slice(i+1).includes('center'))
-			  {
-				  $('#slider'+current_slide+' #heading').css("text-align","center")
-			  }
-			  if (x[i] == "align" && x[i+1]=="heading" && x.slice(i+1).includes('justify'))
-			  {
-				  $('#slider'+current_slide+' #heading').css("text-align","justify")
-			  }
-			  if (x[i] == "symbol" && x[i+1]=="plus")
-			  {
-				x[i+1] = '+';
-				
-			  }
-			  if (x[i] == "symbol" && x[i+1]=="difference")
-			  {
-				x[i+1] = '-';
-				
-			  }
-			  if (x[i] == "symbol" && x[i+1]=="open" && x[i+2]=="square" && x[i+3]=="bracket")
-			  {
-				x[i+1] = '[';
-				
-			  }
-			  if (x[i] == "symbol" && x[i+1]=="equals")
-			  {
-				x[i+1] = '=';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="percentage")
-			  {
-				x[i+1] = '%';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="dollar")
-			  {
-				  x[i] = null;
-				x[i+1] = '$';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="at")
-			  {
-				x[i+1] = '@';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="hash")
-			  {
-				x[i+1] = '#';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square")
-			  {
-				x[i+1] = '^2';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = ']';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '(';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = ')';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '{';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '}';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = ':';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '"';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '\';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '*';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '!';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="pi")
-			  {
-				x[i+1] = '';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="alpha")
-			  {
-				x[i+1] = '}';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="beta")
-			  {
-				x[i+1] = '}';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="ohm")
-			  {
-				x[i+1] = '}';
-				
-			  } if (x[i] == "symbol" && x[i+1]=="square bracket")
-			  {
-				x[i+1] = '}';
-				
-			  }
-
-
-
-
-		 if(x[i] == "add" && x[i+1]== "content"){       
-			//increase height
-		    cont = 1
-		
-			
-	
-	  }
-	  if(x[i]=='exitstring'){
-		  cont = 0;
-		  x[i] = null;
-
-	  }
-
-
-
-
-
-
-
 	  }
 
 	for(var i=0;i < x.length ;i++){
-		if((x[i] == "previous" || words['previous']!=-1 )&& (y.includes("slide"))&&flag==0){                   //previous slide
+		if(x[i] == "previous" && x[i+1]== "slide"){                   //previous slide
 			$('#slider'+current_slide).css("box-shadow","0px 0px white");
 			current_slide--;
 			$('#slider'+current_slide).css("box-shadow","8px 12px #ff6666");
 			  var result = "previous slide";
 			  console.log("result: " + result);
-			flag=1;
-			break;
 		}
 		if(x[i]== "add" && x[i+1] == "background" && x[i+2] =="colour" ){
 			 var color = x[i+3];
@@ -646,7 +232,7 @@ input.addEventListener("keyup", function(event) {
 			  console.log("result: " + result);
 			
 		}
-		if((x[i] == "decrease" && x[i+1]== "height") || (x[i] == "decrease" && x[i+1]== "size") ){           //decrease height
+		if((x[i] == "decrease" && x[i+1]== "height") || (x[i] == "decrease" && x[i+1]== "size") ){                 //decrease height
 			height = height - 10;
 			document.querySelector('#slider'+current_slide+' #image').height=document.querySelector('#slider'+current_slide+' #image').height-20;
 			//$('#slider'+current_slide+' #image').css("height",height+'%')
@@ -658,6 +244,7 @@ input.addEventListener("keyup", function(event) {
 			//$('#slider'+current_slide+' #image').css("height",height+'%')
 		}
 		if(x[i] == "move" && x[i+1]== "down"){                 //move down
+		
 		
 			$('#slider'+current_slide+' #image').css("transform","translate(0px,20px)");
 		}
@@ -689,7 +276,6 @@ input.addEventListener("keyup", function(event) {
 			document.querySelector('#slider'+current_slide+' #image').classList.add('Block');
 		}
 	}
-	
 	for(var i=0;i < x.length ;i++){
 		if(x[i] == "delete" && x[i+1]== "image"){                   //delete image
 			document.querySelector('#slider'+current_slide+' #image').classList.add('None');
@@ -714,163 +300,6 @@ input.addEventListener("keyup", function(event) {
 		}
 	}
 	  
-	for(var i=0;i < x.length; i++){
-		if(x[i] == "change" && x[i+1]== "shape"){
-			$('#slider'+current_slide+' #shapes').removeClass("shapes")
-		}
-		
-		
-		
-		
-		if(x[i] == "add" && x[i+1]== "shape"){                         //shapes
-			{
-				if(x[i+2]== "rectangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_rectangle");
-					break;
-				}
-				if(x[i+2]== "square"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_square");
-					break;
-				}
-				if(x[i+2]== "circle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_circle");
-					break;
-				}
-				if(x[i+2]== "oval"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_oval");
-					break;
-				}
-				if(x[i+2]== "triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_triangle");
-					break;
-				}
-				if(x[i+2]== "down triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_downtriangle");
-					break;
-				}
-				if(x[i+2]== "left triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_lefttriangle");
-					break;
-				}
-				if(x[i+2]== "right triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_righttriangle");
-					break;
-				}
-				if(x[i+2]== "top left triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_toplefttriangle");
-					break;
-				}
-				if(x[i+2]== "top right triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_toprighttriangle");
-					break;
-				}
-				if(x[i+2]== "bottom left triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_bottomlefttriangle");
-					break;
-				}
-				if(x[i+2]== "bottom right triangle"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_bottomrighttriangle");
-					break;
-				}
-				if(x[i+2]== "curved arrow"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_curvedarrow");
-					break;
-				}
-				if(x[i+2]== "trapezoid"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_trapezoid");
-					break;
-				}
-				if(x[i+2]== "parallelogram"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_parallelogram");
-					break;
-				}
-				if(x[i+2]== "star six"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_starsix");
-					break;
-				}
-				if(x[i+2]== "star five"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_starfive");
-					break;
-				}
-				if(x[i+2]== "pentagon"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_pentagon");
-					break;
-				}
-				if(x[i+2]== "hexagon"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_hexagon");
-					break;
-				}
-				if(x[i+2]== "octagon"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_octagon");
-					break;
-				}
-				if(x[i+2]== "heart"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_heart");
-					break;
-				}
-				if(x[i+2]== "diamond"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_diamond");
-					break;
-				}
-				if(x[i+2]== "moon"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_moon");
-					break;
-				}
-				if(x[i+2]== "cone"){
-					$('#slider'+current_slide+ ' #shapes').addClass("shape_cone");
-					break;
-				}
-			
-			}
-			console.log(x[i+2]);
-            $('#slider'+current_slide+' #heads').innerHTML = null;
-		}
-	}
-		
-	
-		
-		
-		
-	for(var i=0;i < x.length; i++)
-	{
-		if(x[i] == "make" && x[i+1]== "text" )                         //text color
-			{
-				if(x[i+3]== "bold")
-				{
-					$('#slider'+current_slide+ ' #format').addClass("bold");
-					break;
-				}
-				if(x[i+3]== "italic")
-				{
-					$('#slider'+current_slide+ ' #format').addClass("italic");
-					break;
-				}
-				if(x[i+3]== "underlined")
-				{
-					$('#slider'+current_slide+ ' #format').addClass("underline");
-					break;
-				}
-			}
-	}
-		
-	for(var i=0;i < x.length; i++)
-	{
-		if(x[i] == "text" && x[i+1]== "size" )                         //text size
-		{
-			
-				$('#slider'+current_slide+ ' #format').addClass("bold");
-			
-			
-			$('#slider'+current_slide+' #image').css("transform","translate(0px,-10px)");
-			$('#slider'+current_slide+' #image').css("transform","translate(0px,-10px)");
-			$('#slider'+current_slide+' #image').css("transform","translate(0px,-10px)")
-				break;
-			
-		}
-	}
-		
-		
-		
 	  	for(var i=0;i < x.length ;i++){
 			 if(x[i] == "save" && x[i+1]== "PPT"){                 //save ppt
 				  
@@ -912,7 +341,6 @@ input.addEventListener("keyup", function(event) {
 	  
 	  //Need to change sentences to command
 	  command = trns;
-	  doit();
 	  console.log(command);
 	  
 	  
@@ -982,7 +410,7 @@ input.addEventListener("keyup", function(event) {
 			  console.log("result: " + result);
 			
 		}
-		if((x[i] == "decrease" && x[i+1]== "height") || (x[i] == "decrease" && x[i+1]== "size") ){         //decrease height
+		if((x[i] == "decrease" && x[i+1]== "height") || (x[i] == "decrease" && x[i+1]== "size") ){                 //decrease height
 			height = height - 10;
 			$('#slider'+current_slide+' #image').css("height",height+'%')
 		}
@@ -1140,21 +568,6 @@ function wikipedia(){
   loadJSON(url, gotData, 'jsonp');
 }
 
-		function synonymAPI(w){
- let term = userInput.value();
-		term=w;
-		var searchurl =   "https://api.datamuse.com/words?ml="+term+"&max=20";
-  
-  loadJSON(searchurl, gotSynonym);
-}
-	function gotSynonym(data){
-		data.forEach(display);
-		console.log(data);
-	}
-		function display(item, index){
-			console.log(item['word']);
-		}
-
 function gotData(data){
   let title = data[1][0];
   title =  title.replace(/\s+/g, '_');
@@ -1192,20 +605,16 @@ function gotContent(data){
 	
 
 function process(result) {
-	output=" ";
  
   for (key in result.response) {
     list = result.response[key].list;
-	  output = output +  list.synonyms + " ";
 	  var cut = list.synonyms.indexOf('|')
 	  var ws = list.synonyms.slice(0,cut);
-	  
 	  
     out_decrease.push(ws);
 	  
 	  
   }
-	console.log(output);
 	for(var i=0;i<100;i++){
 		
 		if(out_make.indexOf(x[i]) != -1){
@@ -1227,33 +636,23 @@ function process(result) {
 		}
 		
 	}
-	for(var i=0;i<100;i++){
-		
-		if(out_decrease.indexOf(x[i]) != -1){
-			words['previous'] = 1;
-		}
-		
-	}
-	for(var i=0;i<100;i++){
-		
-		if(out_decrease.indexOf(x[i]) != -1){
-			words['next'] = 1;
-		}
-		
-	}
 			
 
 	
 
 }
 	
-// function keys(word){
+function keys(word){
 
-// var s = document.createElement("script");
-// s.src = "https://thesaurus.altervista.org/thesaurus/v1?word="+ word + "&language=en_US&output=json&key=GzCOH7WfqKstNDZD10aK&callback=process"; // NOTE: replace test_only with your own KEY
-// document.getElementsByTagName("head")[0].appendChild(s);
+var s = document.createElement("script");
+s.src = "https://thesaurus.altervista.org/thesaurus/v1?word="+ word + "&language=en_US&output=json&key=GzCOH7WfqKstNDZD10aK&callback=process"; // NOTE: replace test_only with your own KEY
+document.getElementsByTagName("head")[0].appendChild(s);
+	
 
-// }
-	  </script>
+
+}
+
+</script>
+
   </body>
 </html>
