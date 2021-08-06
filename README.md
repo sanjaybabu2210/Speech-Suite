@@ -20,3 +20,4 @@ provide all the features of regular PPT
 We faced chanllenges when making the command and function work with normal speech with same word of different meaning and regular 
 ### Note:
 We haven't added files to create Word Doc file soon it gets updated.
+link:http://speech-suite.herokuapp.com/documentation
